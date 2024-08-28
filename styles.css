@@ -1,0 +1,35 @@
+h2 {
+    margin-bottom: 50px;
+    }
+
+
+
+    .bg-green {
+        background-color: #076846 !important; /* darf ich importnt benutzen xx - lieber nicht  */
+    }
+
+    .logo {
+        max-width: 120px;
+        height: auto;
+    }
+
+    table#emissionsTable tbody td {
+        padding: 12px 15px;
+    }
+
+    table#emissionsTable tbody tr {
+        line-height: 1.5;
+    }
+
+    table#emissionsTable tbody tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+
+    table#emissionsTable tbody tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+
+    table#emissionsTable thead th {
+        font-weight: bold;
+        text-align: center;
+    }
