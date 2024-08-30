@@ -5,13 +5,30 @@ h2 {
 
 
     .bg-green {
-        background-color: #076846 !important; /* darf ich importnt benutzen xx - lieber nicht  */
+        background-color: #076846 ; /* darf ich importnt benutzen xx - lieber nicht  */
     }
+
+    
+    /* Beispiel für Media Queries */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 80%; /* Reduziert die maximale Breite des Logos auf kleineren Bildschirmen */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        max-width: 60%; /* Noch kleinere Breite für sehr kleine Bildschirme */
+    }
+}
+
+    
 
     .logo {
         max-width: 120px;
         height: auto;
     }
+    
 
     table#emissionsTable tbody td {
         padding: 12px 15px;
