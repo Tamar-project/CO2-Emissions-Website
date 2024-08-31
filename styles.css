@@ -8,7 +8,8 @@ h2 {
         background-color: #076846 ; /* darf ich importnt benutzen xx - lieber nicht  */
     }
 
-    
+
+
     /* Beispiel für Media Queries */
 @media (max-width: 768px) {
     .logo {
@@ -25,10 +26,25 @@ h2 {
     
 
     .logo {
-        max-width: 120px;
+        max-width: 134px;
         height: auto;
     }
     
+    /* Standardlinkfarbe */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    display: inline-block; /* Ermöglicht die Anpassung der Breite */
+    padding-bottom: 5px; /* Optional: Abstand zum Text */
+}
+
+/* Hover-Effekt: weißer Unterstrich */
+.nav-link:hover {
+    border-bottom: 2px solid white;
+    color: white; /* Beibehaltung der weißen Farbe */
+}
+
 
     table#emissionsTable tbody td {
         padding: 12px 15px;
