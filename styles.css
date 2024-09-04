@@ -1,14 +1,84 @@
 h2 {
     margin-bottom: 50px;
+
     }
 
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+    main {
+        flex: 1;
+    }
+    
+  
+
+
+    .header {
+        display: flex;
+        justify-content: center; /* Zentriert den Inhalt horizontal */
+        align-items: center; /* Zentriert den Inhalt vertikal */
+        background-image: url('banner3.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 60vh; /* Höhe des Headers */
+    }
+    
 
 
     .bg-green {
-        background-color: #076846 ; /* darf ich importnt benutzen xx - lieber nicht  */
+        background-image: url('banner3.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-top: 25%;  
+        padding-bottom: 25%; 
     }
+    
 
 
+
+   /* .bg-green {
+        background-color: #076846 ; 
+
+    } */ 
+
+
+    /* Responsiver Header für kleinere Bildschirme */
+@media (max-width: 992px) {
+    .header {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        height: 30vh;
+        background-position: top; /* Hintergrundbild weiter nach oben verschieben */
+    }
+}
+
+/* Hintergrundbild für mobile Ansichten */
+.bg-green {
+    background-image: url('banner3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 25%;
+    padding-bottom: 25%;
+}
+
+
+    
 
     /* Beispiel für Media Queries */
 @media (max-width: 768px) {
@@ -23,12 +93,15 @@ h2 {
     }
 }
 
-    
 
+
+    
     .logo {
         max-width: 134px;
         height: auto;
     }
+
+    
     
     /* Standardlinkfarbe */
 .nav-link {
@@ -43,6 +116,7 @@ h2 {
 .nav-link:hover {
     border-bottom: 2px solid white;
     color: white; /* Beibehaltung der weißen Farbe */
+    width: 100%; /* Steuert die Länge des Unterstrichs */
 }
 
 
