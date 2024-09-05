@@ -24,9 +24,12 @@ h2 {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        height: 60vh; /* Höhe des Headers */
+        height: 40vh; /* Höhe des Headers */
+        position: relative;
     }
     
+
+
 
 
     .bg-green {
@@ -87,6 +90,8 @@ h2 {
     }
 }
 
+
+
 @media (max-width: 576px) {
     .logo {
         max-width: 60%; /* Noch kleinere Breite für sehr kleine Bildschirme */
@@ -95,10 +100,14 @@ h2 {
 
 
 
+
     
     .logo {
-        max-width: 134px;
+        width: 6vw;
         height: auto;
+        object-fit: contain;
+        
+        
     }
 
     

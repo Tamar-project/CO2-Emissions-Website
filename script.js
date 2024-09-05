@@ -9,6 +9,35 @@ $(document).ready(function () {
         });
     }
 
+function escapeHTML(text) {
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+
+    function loadContent(page) {
+        const allowedPages = ['daten', 'kontakt'];  // Nur erlaubte Seiten
+        if (allowedPages.includes(page)) {
+            $('#content-area').load(page + '.html', function (response, status) {
+                if (status === 'error') {
+                    $('#content-area').html('<p>Fehler beim Laden des Inhalts.</p>');
+                }
+            });
+        } else {
+            $('#content-area').html('<p>Unzulässige Seite.</p>');
+        }
+    }
+    
+}
+
+
+
+
+
     $('#home-link').click(function () {
         $('#content-area').html(`
             <h2>CO2-Emissionsdaten | Tabelle (Unternehmen)</h2>
