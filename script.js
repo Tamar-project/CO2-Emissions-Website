@@ -34,10 +34,6 @@ function escapeHTML(text) {
     
 }
 
-
-
-
-
     $('#home-link').click(function () {
         $('#content-area').html(`
             <h2>CO2-Emissionsdaten | Tabelle (Unternehmen)</h2>
@@ -84,6 +80,14 @@ function escapeHTML(text) {
 
     $('#kontakt-link').click(function () {
         loadContent('kontakt');
+    });
+
+    $('#impressum-link').click(function () {
+        loadContent('impressum');
+    });
+
+    $('#datenschutz-link').click(function () {
+        loadContent('datenschutz');
     });
 
     $('#home-link').click(); // Initialer Inhalt

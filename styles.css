@@ -13,8 +13,6 @@ h2 {
         flex: 1;
     }
     
-  
-
 
     .header {
         display: flex;
@@ -41,14 +39,6 @@ h2 {
         padding-bottom: 25%; 
     }
     
-
-
-
-   /* .bg-green {
-        background-color: #076846 ; 
-
-    } */ 
-
 
     /* Responsiver Header für kleinere Bildschirme */
 @media (max-width: 992px) {
@@ -79,9 +69,7 @@ h2 {
     padding-top: 25%;
     padding-bottom: 25%;
 }
-
-
-    
+ 
 
     /* Beispiel für Media Queries */
 @media (max-width: 768px) {
@@ -90,23 +78,16 @@ h2 {
     }
 }
 
-
-
 @media (max-width: 576px) {
     .logo {
         max-width: 60%; /* Noch kleinere Breite für sehr kleine Bildschirme */
     }
 }
-
-
-
-
-    
     .logo {
         width: 6vw;
         height: auto;
         object-fit: contain;
-        
+      
         
     }
 
