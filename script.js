@@ -1,39 +1,36 @@
 $(document).ready(function () {
     $('#emissionsTable').DataTable();
 
-    function loadContent(page) {
-        $('#content-area').load(page + '.html', function (response, status, xhr) {
-            if (status === 'error') {
-                $('#content-area').html('<p>Fehler beim Laden des Inhalts: ' + xhr.status + ' ' + xhr.statusText + '</p>');
-            }
+    // Zugriff auf das eingebaute Suchfeld von DataTables
+    $('#emissionsTable_filter input').on('input', function () {
+        // Escape-Schutz anwenden, um HTML-Sonderzeichen zu entschärfen
+        var safeSearch = escapeHTML($(this).val().trim());
+        $('#emissionsTable').DataTable().search(safeSearch).draw();
+    });
+
+    // Schutzfunktion gegen HTML-Injektionen
+    function escapeHTML(text) { 
+        const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+        return text.replace(/[&<>"']/g, function (match) { 
+            return map[match];
         });
     }
 
-function escapeHTML(text) {
-    var map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-    };
-    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-
+    // Funktion zum Laden des Inhalts von Seiten
     function loadContent(page) {
-        const allowedPages = ['daten', 'kontakt'];  // Nur erlaubte Seiten
+        const allowedPages = ['daten', 'kontakt', 'impressum', 'datenschutz'];  // Nur erlaubte Seiten
         if (allowedPages.includes(page)) {
-            $('#content-area').load(page + '.html', function (response, status) {
+            $('#content-area').load(page + '.html', function (response, status, xhr) {
                 if (status === 'error') {
-                    $('#content-area').html('<p>Fehler beim Laden des Inhalts.</p>');
+                    $('#content-area').html('<p>Fehler beim Laden des Inhalts: ' + xhr.status + ' ' + xhr.statusText + '</p>');
                 }
             });
         } else {
             $('#content-area').html('<p>Unzulässige Seite.</p>');
         }
     }
-    
-}
 
+    // Event-Listener für Navigationslinks
     $('#home-link').click(function () {
         $('#content-area').html(`
             <h2>CO2-Emissionsdaten | Tabelle (Unternehmen)</h2>
