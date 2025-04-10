@@ -1,24 +1,34 @@
 $(document).ready(function () {
+    // Initialisierung der DataTable
     $('#emissionsTable').DataTable();
 
-    // Zugriff auf das eingebaute Suchfeld von DataTables
+    // Ereignislistener für das Suchfeld der DataTable
     $('#emissionsTable_filter input').on('input', function () {
-        // Escape-Schutz anwenden, um HTML-Sonderzeichen zu entschärfen
-        var safeSearch = escapeHTML($(this).val().trim());
+        // Holen des aktuellen Suchbegriffs
+        var searchInput = $(this).val().trim();
+        // Sicheren Suchbegriff generieren
+        var safeSearch = escapeHTML(searchInput);
+        // DataTable mit sicherem Suchbegriff aktualisieren
         $('#emissionsTable').DataTable().search(safeSearch).draw();
     });
 
-    // Schutzfunktion gegen HTML-Injektionen
-    function escapeHTML(text) { 
-        const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-        return text.replace(/[&<>"']/g, function (match) { 
+    // Funktion zum Entschärfen von HTML-Inhalten
+    function escapeHTML(text) {
+        const map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+        return text.replace(/[&<>"']/g, function (match) {
             return map[match];
         });
     }
 
-    // Funktion zum Laden des Inhalts von Seiten
+    // Funktion zum Laden von Inhalten auf der Seite
     function loadContent(page) {
-        const allowedPages = ['daten', 'kontakt', 'impressum', 'datenschutz'];  // Nur erlaubte Seiten
+        const allowedPages = ['daten', 'kontakt', 'impressum', 'datenschutz'];  // Erlaubte Seiten
         if (allowedPages.includes(page)) {
             $('#content-area').load(page + '.html', function (response, status, xhr) {
                 if (status === 'error') {
@@ -30,7 +40,7 @@ $(document).ready(function () {
         }
     }
 
-    // Event-Listener für Navigationslinks
+    // Event-Listener für die Navigation
     $('#home-link').click(function () {
         $('#content-area').html(`
             <h2>CO2-Emissionsdaten | Tabelle (Unternehmen)</h2>
@@ -68,9 +78,10 @@ $(document).ready(function () {
                 </table>
             </div>
         `);
-        $('#emissionsTable').DataTable();
+        $('#emissionsTable').DataTable(); // Neu initialisieren, um sicherzustellen, dass die Tabelle funktioniert
     });
 
+    // Ereignisse für andere Links
     $('#daten-link').click(function () {
         loadContent('daten');
     });
@@ -87,5 +98,6 @@ $(document).ready(function () {
         loadContent('datenschutz');
     });
 
-    $('#home-link').click(); // Initialer Inhalt
+    // Startinhalt laden
+    $('#home-link').click(); 
 });

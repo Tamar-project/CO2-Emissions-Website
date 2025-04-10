@@ -130,3 +130,15 @@ h2 {
         font-weight: bold;
         text-align: center;
     }
+
+    
+
+
+table.dataTable tbody tr {
+    background-color: #ffffff !important;  /* Alle Tabellenzeilen weiß */
+  }
+  
+  table.dataTable tbody tr:hover {
+    background-color: #ffffff !important;  /* Kein grauer Hover-Effekt */
+  }
+  
