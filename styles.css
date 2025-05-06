@@ -20,8 +20,8 @@ h2 {
 
     .header {
         display: flex;
-        justify-content: center; /* Zentriert den Inhalt horizontal */
-        align-items: center; /* Zentriert den Inhalt vertikal */
+        justify-content: center; 
+        align-items: center; 
         background-image: url('banner3.jpg');
         background-size: cover;
         background-position: center;
@@ -60,7 +60,7 @@ h2 {
 @media (max-width: 576px) {
     .header {
         height: 30vh;
-        background-position: top; /* Hintergrundbild weiter nach oben verschieben */
+        background-position: top; 
     }
 }
 
@@ -84,7 +84,7 @@ h2 {
 
 @media (max-width: 576px) {
     .logo {
-        max-width: 60%; /* Noch kleinere Breite für sehr kleine Bildschirme */
+        max-width: 60%;            /* Noch kleinere Breite für sehr kleine Bildschirme */
     }
 }
     .logo {
@@ -97,20 +97,20 @@ h2 {
 
     
     
-    /* Standardlinkfarbe */
+    
 .nav-link {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease, border-bottom 0.3s ease;
-    display: inline-block; /* Ermöglicht die Anpassung der Breite */
-    padding-bottom: 5px; /* Optional: Abstand zum Text */
+    display: inline-block; 
+    padding-bottom: 5px; 
 }
 
-/* Hover-Effekt: weißer Unterstrich */
+
 .nav-link:hover {
     border-bottom: 2px solid white;
-    color: white; /* Beibehaltung der weißen Farbe */
-    width: 100%; /* Steuert die Länge des Unterstrichs */
+    color: white; 
+    width: 100%; 
 }
 
 
@@ -139,10 +139,12 @@ h2 {
 
 
 table.dataTable tbody tr {
-    background-color: #ffffff !important;  /* Alle Tabellenzeilen weiß */
+    background-color: #ffffff !important;  
   }
   
   table.dataTable tbody tr:hover {
-    background-color: #ffffff !important;  /* Kein grauer Hover-Effekt */
+    background-color: #ffffff !important;  
   }
+ 
+
   
