@@ -1,7 +1,7 @@
 # Tamar-Project
 
 ## Titel  
-Tamar-Project – Eine moderne Webanwendung zur Berechnung und Darstellung des persönlichen CO2-Footprints.  
+Tamar-Project / Eine moderne Webanwendung zur Berechnung und Darstellung des persönlichen CO2-Footprints.  
 
 ## Funktionen  
 - Mehrseitige Struktur (Startseite, Impressum, Datenschutz, Kontakt)  
@@ -39,5 +39,4 @@ README.md         # Projektbeschreibung (diese Datei)
 ## Hinweis  
 Dieses Projekt ist noch in der Entwicklung und kann Fehler enthalten. Es wurde für Bildungszwecke erstellt und ist nicht für den produktiven Einsatz geeignet.  
 
-## Autor  
-Erstellt von [Dein Name]. Bei Fragen oder Anregungen erreichst du mich unter [Deine E-Mail-Adresse](mailto:deine-email@example.com).
+
